@@ -10,10 +10,15 @@ import Combine
 
 protocol NewsViewModel {
     func getArticles()
+    var isLoading: Bool { get }
 }
 
 // Using Class not Struct cause i want to use ObservableObject to Observe changes
 class NewsViewModelImpl: ObservableObject, NewsViewModel  {
+    var isLoading: Bool {
+        state == .loading
+    }
+    
     
     // Using DependencyInjection to Inject our service into this Class
     private let service: NewsService

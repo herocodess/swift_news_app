@@ -17,21 +17,18 @@ struct FeedView: View {
         NavigationView {
             Group {
                 switch viewModel.state {
-                case .loading:
-                    ProgressView()
                 case .failed(let error):
                     ErrorView(error: error, handler: viewModel.getArticles)
-                case .success(let articles):
-                        List(articles) {
-                            item in ArticleView(article: item)
+                default:
+                    List(viewModel.isLoading ? Article.dummyData : viewModel.article ) {
+                        item in ArticleView(isLoading: viewModel.isLoading, article: item)
                                 .onTapGesture {
                                     load(url: item.url)
                                 }
                         }
                         .navigationTitle(Text("News"))
+                        .listStyle(.plain)
                 }
-                
-                
             }
         }
         .onAppear(perform: viewModel.getArticles)

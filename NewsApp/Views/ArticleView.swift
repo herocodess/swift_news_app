@@ -10,6 +10,8 @@ import URLImage
 
 struct ArticleView: View {
     
+    @State var isLoading: Bool
+    
     let article: Article
     
     var body: some View {
@@ -31,10 +33,11 @@ struct ArticleView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(article.title ?? "")
                     .foregroundColor(.black)
-                    .font(.system(size: 18, weight: .semibold))
+                    .font(.system(size: 16, weight: .semibold))
                 Text(article.source ?? "N/A")
                     .foregroundColor(.gray)
                     .font(.footnote)
+                    
                 if let date = article.date {
                     HStack(spacing: 4) {
                         Text(date, style: .date)
@@ -48,7 +51,8 @@ struct ArticleView: View {
                 
             }
         }
-        
+        .redacted(reason: isLoading ? .placeholder : [])
+        .allowsHitTesting(!isLoading)
         
     }
 }
@@ -64,7 +68,7 @@ struct PlaceholderImageView: View {
 
 struct ArticleView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleView(article: Article.dummyData)
+        ArticleView( isLoading: false, article: Article.dummyData.first!)
             .previewLayout(.sizeThatFits)
     }
 }
