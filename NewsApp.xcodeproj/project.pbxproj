@@ -24,6 +24,8 @@
 		C4B1D16428610C8000197EB3 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B1D16328610C8000197EB3 /* ArticleView.swift */; };
 		C4B1D1662861116800197EB3 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B1D1652861116800197EB3 /* ErrorView.swift */; };
 		C4FACB602862763600D3111C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FACB5F2862763600D3111C /* Constants.swift */; };
+		C4FACB6528627E3D00D3111C /* SystemThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FACB6428627E3D00D3111C /* SystemThemeManager.swift */; };
+		C4FACB672862837900D3111C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FACB662862837900D3111C /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		C4B1D16328610C8000197EB3 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		C4B1D1652861116800197EB3 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		C4FACB5F2862763600D3111C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C4FACB6428627E3D00D3111C /* SystemThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThemeManager.swift; sourceTree = "<group>"; };
+		C4FACB662862837900D3111C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		C4B1D13A2860ED2000197EB3 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				C4FACB6128627E1A00D3111C /* Theme */,
 				C4FACB5E2862762700D3111C /* Config */,
 				C4B1D15B2861079D00197EB3 /* ViewModel */,
 				C4B1D1582861075600197EB3 /* States */,
@@ -168,6 +173,15 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		C4FACB6128627E1A00D3111C /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				C4FACB6428627E3D00D3111C /* SystemThemeManager.swift */,
+				C4FACB662862837900D3111C /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,7 +271,9 @@
 				C4B1D1512861022600197EB3 /* NewsEndpoint.swift in Sources */,
 				C4B1D16428610C8000197EB3 /* ArticleView.swift in Sources */,
 				C4B1D15D286107AD00197EB3 /* NewsViewModel.swift in Sources */,
+				C4FACB672862837900D3111C /* Theme.swift in Sources */,
 				C49CB0DD2861AC5400E1BE87 /* SettingsView.swift in Sources */,
+				C4FACB6528627E3D00D3111C /* SystemThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
